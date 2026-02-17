@@ -1,0 +1,27 @@
+@forward "vars";
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: white;
+  min-height: 100dvh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  max-width: 1700px;
+}

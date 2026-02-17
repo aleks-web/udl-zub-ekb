@@ -1,0 +1,11 @@
+:root {
+    --main-color: #FF7700;
+    --text-color: #2C5A74;
+    --container-padding: 20px;
+}
+
+@media (max-width: 576px) {
+    :root {
+        --container-padding: 15px;
+    }
+}

@@ -1,0 +1,131 @@
+/* Основной класс кнопки */
+.cta-wrap {
+  container-type: inline-size;
+  container-name: cta;
+  width: 100%;
+}
+
+.cta {
+  --radius: 80px;
+  --border-size: 9px;
+  --border-size-negative: -9px;
+  --height: var(--cta-h, 110px);
+  --circle-size: calc( var(--height) - (var(--border-size) * 2) );
+  position: relative;
+  padding: 20px 18px;
+  transition: all 0.2s ease;
+  border-radius: var(--radius);
+  background: #4A3AFF;
+  cursor: pointer;
+  border: var(--border-size) solid #4A3AFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  height: var(--height);
+  width: 100%;
+  z-index: 2;
+
+  @container cta (width < 710px) {
+    padding: 10px;
+    --height: 90px;
+  }
+
+  @container cta (width < 576px) {
+    --height: 70px;
+  }
+
+  * {
+    z-index: 5;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: var(--border-size-negative);
+    display: block;
+    background-image: url("/src/img/cta-bg.jpg");
+    width: calc(100% + (var(--border-size) * 2));
+    height: calc(100% + (var(--border-size) * 2));
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: var(--radius);
+    opacity: 0.5;
+    top: var(--border-size-negative);
+    z-index: 3;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    display: block;
+    border-radius: 50px;
+    background: white;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    transition: all 0.8s ease;
+    z-index: 4;
+  }
+
+  & > span {
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: .8s all;
+    font-size: 30px;
+    min-width: max-content;
+
+    @container cta (width < 740px) {
+      font-size: 27px;
+    }
+
+    @container cta (width < 710px) {
+      font-size: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    @container cta (width < 576px) {
+      font-size: 20px;
+    }
+  }
+
+  svg {
+    position: relative;
+    top: 0;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: white;
+    stroke-width: 2;
+    transform: translateX(5px);
+    transition: all 0.5s ease;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    margin-left: auto;
+  }
+
+  &:hover > span {
+    color: var(--text-color);
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+
+  &:hover > svg {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 2s ease;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: all 2s ease;
+  }
+}

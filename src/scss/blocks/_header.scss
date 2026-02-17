@@ -1,0 +1,287 @@
+body.menu-open {
+
+}
+
+.header {
+  --gap: 30px;
+
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 20;
+
+  &__container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+  }
+
+  &__grid {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__item {
+    &-logo-img {
+      max-width: 400px;
+    }
+
+    &-work-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap);
+    }
+  }
+
+  .info-item:nth-child(1),
+  .info-item:nth-child(2) {
+    border-right: 1px solid #2C5A74;
+    padding-right: var(--gap);
+  }
+
+  &__burger-btn {
+    display: none;
+
+    > div {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: content-box;
+      cursor: pointer;
+    }
+
+    &-open {
+      display: none !important;
+    }
+
+    &_active {
+      .header__burger-btn-close {
+        display: none !important;
+      }
+
+      .header__burger-btn-open {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+  color: var(--text-color);
+
+  &__icon {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 18px;
+  }
+
+  &__desc {
+    font-size: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  &__desc a {
+    color: var(--text-color);
+  }
+
+  &__right {}
+}
+
+.info-item-mb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  color: var(--text-color);
+
+  &__title {
+    font-size: 16px;
+  }
+
+  &__desc {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    a {
+      color: var(--text-color);
+    }
+  }
+}
+
+
+
+.mobile-header {
+  background-color: white;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transform: translateX(-100%);
+  transition: .2s all;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+
+  &__container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: var(--text-color);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &_active {
+    transform: translateX(0) !important;
+    opacity: 1;
+  }
+}
+
+
+@media(max-width: 1700px) {
+  .info-item {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__desc {
+      font-size: 18px;
+    }
+  }
+
+
+  .header {
+    --gap: 20px;
+
+    &__item {
+      &-logo-img {
+        max-width: 300px;
+      }
+    }
+  }
+}
+
+@media(max-width: 1500px) {
+  .info-item {
+    &__title {
+      font-size: 15px;
+    }
+
+    &__desc {
+      font-size: 16px;
+      gap: 15px;
+    }
+  }
+
+  .header {
+    &__item {
+      &-logo-img {
+        max-width: 250px;
+      }
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .header {
+    &__item-work-time {
+      display: none;
+    }
+
+    &__burger-btn {
+      display: block;
+    }
+
+    &__item {
+      &-logo-img {
+        max-width: 200px;
+      }
+    }
+  }
+}
+
+@media(max-width: 920px) {
+  .header {
+    &__container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .info-item-mb {
+    &__desc {
+      flex-direction: column;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .header {
+    &__item {
+      &-logo-img {
+        max-width: 200px;
+      }
+    }
+  }
+
+  .info-item-mb {
+    &__title {
+      font-size: 16px;
+    }
+
+    &__desc {
+      font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 330px) {
+  .header {
+    &__item {
+      &-logo-img {
+        max-width: 140px;
+      }
+    }
+
+    &__burger-btn > div {
+      max-width: 23px;
+      height: 23px;
+    }
+  }
+
+  .info-item-mb {
+    gap: 15px;
+
+    &__title {
+      font-size: 15px;
+    }
+    &__desc {
+      font-size: 16px;
+      gap: 5px;
+    }
+
+    &__icon svg {
+      width: 18px;
+    }
+  }
+}
