@@ -1,5 +1,331 @@
 .quiz {
   width: 100%;
-  height: 50px;
+  padding: 80px 0;
   background-color: #5CC2FF;
+  position: relative;
+
+  @media (max-width: 1500px) {
+    padding: 50px 0;
+  }
+
+  @media (max-width: 1300px) {
+    padding-top: 110px;
+  }
+
+  @media (max-width: 920px) {
+    padding-top: 90px;
+  }
+
+  @media (max-width: 576px) {
+    padding-top: 50px;
+  }
+
+  &__container {}
+
+  &__hidden {
+    overflow: hidden;
+  }
+
+  &__time-card {
+    position: absolute;
+    top: -55px;
+    z-index: 3;
+    left: 43%;
+
+    @media (max-width: 1500px) {
+      padding: 10px 25px 10px 10px;
+      border-radius: 50px;
+      left: unset;
+      right: 250px;
+      top: -38px;
+    }
+
+    @media (max-width: 1300px) {
+      top: 17px;
+      right: 280px;
+    }
+
+    @media (max-width: 1200px) {
+      right: 230px;
+    }
+
+    @media (max-width: 920px) {
+      top: 10px;
+      right: unset;
+      left: calc(var(--container-padding) + 130px);
+    }
+
+    @media (max-width: 576px) {
+      left: 115px;
+      top: -35px;
+    }
+
+    @media (max-width: 430px) {
+      gap: 6px;
+    }
+
+    @media (max-width: 380px) {
+      width: 100%;
+      max-width: calc(100% - var(--container-padding) * 2);
+      left: var(--container-padding);
+    }
+
+    .time-card__clock {
+      @media (max-width: 1500px) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .time-card__desc-title {
+      @media (max-width: 1500px) {
+        font-size: 26px;
+      }
+
+      @media (max-width: 1200px) {
+        font-size: 21px;
+      }
+
+      @media (max-width: 430px) {
+        font-size: 16px;
+      }
+    }
+
+    .time-card__desc-text {
+      @media (max-width: 1500px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 1200px) {
+        font-size: 19px;
+      }
+
+      @media (max-width: 430px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__action {
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 10px;
+    padding-right: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+    z-index: 2;
+    min-width: max-content;
+
+    @media (max-width: 768px) {
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 5px 19px 5px 0;
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: var(--main-color);
+      left: -100%;
+    }
+
+    &-desc {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: var(--main-color);
+      background-color: white;
+      padding-left: 40px;
+      position: relative;
+      z-index: 1;
+
+      @media (max-width: 1200px) {
+        padding-left: 20px;
+      }
+
+      @media (max-width: 920px) {
+        padding-left: 40px;
+      }
+
+      @media (max-width: 768px) {
+        padding-left: 60px;
+      }
+
+      @media (max-width: 576px) {
+        padding-left: 0;
+      }
+
+      strong {
+        font-style: italic;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: -100%;
+        background-color: white;
+        z-index: 0;
+      }
+
+      &:after {
+        right: unset;
+        left: -50px;
+        width: 50px;
+      }
+    }
+  }
+
+  &__lent {
+    margin-bottom: 20px;
+    height: 124px;
+    font-size: 64px;
+    font-weight: bold;
+
+    @media (max-width: 1700px) {
+      font-size: 50px;
+      height: 110px;
+    }
+
+    @media (max-width: 1600px) {
+      height: 90px;
+      font-size: 45px;
+    }
+
+    @media (max-width: 1200px) {
+      height: 80px;
+      font-size: 35px;
+    }
+
+    @media (max-width: 768px) {
+      height: 60px;
+      font-size: 25px;
+    }
+
+    @media (max-width: 576px) {
+      height: 50px;
+      font-size: 19px;
+    }
+
+    @media (max-width: 430px) {
+      font-size: 18px;
+    }
+
+    .quiz-cont__left {
+      @media (max-width: 1600px) {
+        width: 15%;
+      }
+
+      @media (max-width: 576px) {
+        width: auto;
+      }
+    }
+  }
+
+  &__implant {
+    position: relative;
+
+    img {
+      position: absolute;
+      right: 15px;
+      bottom: -70px;
+      z-index: 4;
+      padding-right: 15px;
+
+      @media (max-width: 1700px) {
+        bottom: -125px;
+      }
+
+      @media (max-width: 1600px) {
+        width: 225px;
+        bottom: -110px;
+      }
+
+      @media (max-width: 1200px) {
+        width: 190px;
+      }
+
+      @media (max-width: 920px) {
+        width: 140px;
+        bottom: -35px;
+        right: unset;
+        left: var(--container-padding);
+      }
+
+      @media (max-width: 576px) {
+        width: 100px;
+        bottom: -25px;
+      }
+
+      @media (max-width: 380px) {
+        width: 70px;
+        bottom: 24px;
+        right: 5px;
+        left: unset;
+      }
+
+      @media (max-width: 330px) {
+        width: 60px;
+        bottom: 26px;
+      }
+
+      @media (max-width: 300px) {
+        display: none;
+      }
+
+    }
+  }
+}
+
+.quiz-cont {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+
+  &__left {
+    width: 25%;
+  }
+
+  &__right {
+    width: 85%;
+  }
+
+  &__doctor-card {
+
+  }
+}
+
+
+
+
+.quiz-cont_q {
+
+    .quiz-cont__left {
+        @media (max-width: 1600px) {
+          width: 30%;
+        }
+
+        @media (max-width: 1200px) {
+          display: none;
+        }
+    }
+
+    .quiz-cont__right {
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
+    }
+
 }

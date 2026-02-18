@@ -25,6 +25,7 @@
   height: var(--height);
   width: 100%;
   z-index: 2;
+  box-shadow: 0px 5px 10px 0px #00000026;
 
   @container cta (width < 710px) {
     padding: 10px;

@@ -1,5 +1,5 @@
 .main-section {
-  --pd: 60px;
+  --pd: 90px;
   --gap: 45px;
   padding-top: var(--pd);
   padding-bottom: var(--pd);
@@ -28,20 +28,12 @@
     align-items: center;
   }
 
-  &__cta-wrap-mob {
-    display: none;
-  }
-
   &__left {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
     width: 60%;
     overflow: hidden;
-  }
-
-  &__time-card {
-    position: absolute;
   }
 
   &__gm {
@@ -59,8 +51,6 @@
     }
   }
 }
-
-
 
 .main-section-utp-wrap {
   container-type: inline-size;
@@ -178,7 +168,6 @@
 }
 
 
-
 @media (max-width: 1700px) {
   .main-section {
     &__gm {
@@ -270,13 +259,9 @@
     h1 {
       font-size: 28px;
     }
-  }
-}
 
-@media (max-width: 890px) {
-  .main-section  {
     &__gm {
-      max-width: 365px;
+      max-width: 378px;
       height: 350px;
     }
   }
@@ -313,13 +298,20 @@
 
     &__gm {
       position: relative;
+      margin-top: 40px;
+      margin-bottom: 80px;
+      max-width: 100%;
     }
 
     &__cta-wrap {
       position: absolute;
-      bottom: 10px;
+      bottom: 50px;
       left: 0;
       padding: 0 var(--container-padding);
+
+      .cta {
+        --cta-h: 60px;
+      }
     }
   }
 
@@ -342,6 +334,18 @@
 
     &__text {
       height: 130px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .main-section {
+    &__gm {
+      margin-bottom: 105px;
+    }
+
+    &__cta-wrap {
+      bottom: 70px;
     }
   }
 }
@@ -371,11 +375,25 @@
   }
 
   .main-section {
-    .cta {
-      & > span {
-        font-size: 18px;
+    &__gm {
+      overflow: hidden;
+      height: 280px;
+      margin-bottom: 135px;
+
+      img {
+        position: relative;
+        left: 0;
       }
     }
+
+    &__cta-wrap {
+      .cta {
+        & > span {
+          font-size: 18px;
+        }
+      }
+    }
+
   }
 }
 
@@ -411,6 +429,11 @@
   }
 
   .main-section {
+
+    &__gm {
+      margin-bottom: 100px;
+    }
+
     .cta {
       --height: 50px;
 
@@ -419,14 +442,19 @@
       }
     }
 
-    &__gm {
-      overflow: hidden;
-      height: 280px;
+    &__cta-wrap {
+      bottom: 60px;
+    }
+  }
+}
 
-      img {
-        position: relative;
-        left: 60px;
-      }
+@media (max-width: 330px) {
+  .main-section {
+
+    &__gm {
+      margin-bottom: 80px;
+      padding: 0 20px;
+      margin-top: 20px;
     }
   }
 }
