@@ -340,6 +340,11 @@
 
 @media (max-width: 576px) {
   .main-section {
+
+    h1 {
+      font-size: 26px;
+    }
+
     &__gm {
       margin-bottom: 105px;
     }
@@ -375,6 +380,10 @@
   }
 
   .main-section {
+    h1 {
+      font-size: 24px;
+    }
+
     &__gm {
       overflow: hidden;
       height: 280px;
@@ -430,6 +439,10 @@
 
   .main-section {
 
+    h1 {
+      font-size: 22px;
+    }
+
     &__gm {
       margin-bottom: 100px;
     }
@@ -444,6 +457,10 @@
 
     &__cta-wrap {
       bottom: 60px;
+    }
+
+    &__medals {
+      gap: 10px;
     }
   }
 }

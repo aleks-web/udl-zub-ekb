@@ -1,0 +1,93 @@
+.sc-radio-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  transition: .2s all;
+  border-radius: 15px;
+  padding: 5px;
+  border: 2px solid #5CC2FF;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    background-color: #5CC2FF;
+
+    .sc-radio-img__radio {
+      --color: white;
+    }
+
+    .sc-radio-img__text {
+      color: white;
+    }
+  }
+
+  &__img {
+    height: 140px;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+
+    img {
+      position: relative;
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    transition: .2s all;
+  }
+
+  &__radio-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 100%;
+    margin-left: 3px;
+    margin-bottom: 3px;
+  }
+
+  &_active {
+    background-color: #5CC2FF;
+  }
+}
+
+
+/*
+  El radio type 1
+*/
+.el-radio-t1 {
+  --size: 20px;
+  --color: #2C5A74;
+  border-radius: 50px;
+  width: var(--size);
+  height: var(--size);
+  border: 2px solid var(--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s all;
+
+  &:before {
+    content: '';
+    display: block;
+    width: calc(var(--size) / 2 - 2px);
+    height: calc(var(--size) / 2 - 2px);
+    border-radius: inherit;
+    border: inherit;
+  }
+
+  &_active {
+    --color: #5CC2FF;
+
+    &:before {
+      background-color: var(--color);
+    }
+  }
+
+}
