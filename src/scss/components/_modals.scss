@@ -210,117 +210,6 @@ body {
     }
   }
 
-  &__form {
-    --f-size: 24px;
-    background-color: #F4F4F4;
-    border-radius: var(--rd);
-    color: var(--text-color);
-    padding: 25px 30px;
-    margin-top: 30px;
-
-    @media (max-width: 920px) {
-      --f-size: 20px;
-    }
-
-    @media (max-width: 768px) {
-      --f-size: 19px;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 430px) {
-      --f-size: 16px;
-      padding: 20px;
-      margin-top: 15px;
-    }
-
-
-    &-policy {
-      font-size: 16px;
-      margin-top: 20px;
-
-      @media (max-width: 920px) {
-        text-align: center;
-      }
-
-      @media (max-width: 768px) {
-        font-size: 15px;
-      }
-
-      @media (max-width: 576px) {
-        font-size: 14px;
-      }
-
-      @media (max-width: 430px) {
-        font-size: 13px;
-      }
-
-      @media (max-width: 380px) {
-        font-size: 12px;
-      }
-
-      @media (max-width: 300px) {
-        font-size: 11px;
-      }
-
-      a {
-        color: #5CC2FF;
-        font-weight: bold;
-        text-decoration: revert;
-        transition: .2s all;
-
-        &:hover {
-          color: var(--text-color);
-        }
-      }
-    }
-
-    &-title {
-      font-size: var(--f-size);
-      margin-bottom: 4px;
-
-      @media (max-width: 920px) {
-        margin-bottom: 10px;
-      }
-    }
-
-    &-phone {
-      font-size: var(--f-size);
-      padding: 20px 30px;
-      border-radius: 30px;
-      border: 1px solid #999999;
-      outline: none;
-
-      @media (max-width: 920px) {
-        padding: 15px 30px;
-      }
-
-      @media (max-width: 576px) {
-        padding: 10px 20px;
-      }
-
-      &::placeholder {
-        color: #CAD5DC;
-      }
-    }
-
-    &-flex {
-      display: flex;
-      gap: 20px;
-
-      @media (max-width: 1200px) {
-        flex-direction: column;
-      }
-
-      @media (max-width: 920px) {
-        gap: 15px;
-      }
-
-      > * {
-        width: 100%;
-      }
-    }
-  }
-
   &__list {
     list-style: none;
     display: flex;
@@ -516,6 +405,117 @@ body {
     svg {
       width: 20px;
       height: 20px;
+    }
+  }
+}
+
+.form {
+  --f-size: 24px;
+  background-color: #F4F4F4;
+  border-radius: var(--rd);
+  color: var(--text-color);
+  padding: 25px 30px;
+  margin-top: 30px;
+
+  @media (max-width: 920px) {
+    --f-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    --f-size: 19px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 430px) {
+    --f-size: 16px;
+    padding: 20px;
+    margin-top: 15px;
+  }
+
+
+  &__policy {
+    font-size: 16px;
+    margin-top: 20px;
+
+    @media (max-width: 920px) {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 430px) {
+      font-size: 13px;
+    }
+
+    @media (max-width: 380px) {
+      font-size: 12px;
+    }
+
+    @media (max-width: 300px) {
+      font-size: 11px;
+    }
+
+    a {
+      color: #5CC2FF;
+      font-weight: bold;
+      text-decoration: revert;
+      transition: .2s all;
+
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  &__title {
+    font-size: var(--f-size);
+    margin-bottom: 4px;
+
+    @media (max-width: 920px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__phone {
+    font-size: var(--f-size);
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: 1px solid #999999;
+    outline: none;
+
+    @media (max-width: 920px) {
+      padding: 15px 30px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 10px 20px;
+    }
+
+    &::placeholder {
+      color: #CAD5DC;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 920px) {
+      gap: 15px;
+    }
+
+    > * {
+      width: 100%;
     }
   }
 }

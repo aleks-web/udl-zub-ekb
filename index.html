@@ -209,25 +209,22 @@
     </section>
 
     <div class="quiz">
-
       <div class="quiz__time-card time-card">
         <div class="time-card__clock">
           <img src="./src/img/clock.png" alt="clock">
         </div>
+
         <div class="time-card__desc">
           <div class="time-card__desc-title">Всего за <strong>1 визит</strong></div>
           <div class="time-card__desc-text">восстановим все зубы</div>
         </div>
       </div>
-
-
       <div class="quiz__implant">
         <img src="./src/img/implant.png" alt="implant" />
       </div>
 
       <div class="quiz__hidden">
         <div class="container quiz__container">
-
 
           <!-- Start lenta -->
           <div class="quiz-cont quiz__lent">
@@ -242,8 +239,6 @@
             </div>
           </div>
           <!-- End lenta -->
-
-
 
           <div class="quiz-cont quiz-cont_q">
             <div class="quiz-cont__left">
@@ -272,14 +267,17 @@
 
 
 
-
-
               <!-- Start quiz-block -->
               <div class="qz-wrap">
 
-                <div class="qz-wrap__header">
+                <div class="qz-wrap__header qz-wrap__header-1">
                   <div class="qz-wrap__title">Сколько будет стоить конкретно ваш случай?</div>
-                  <div class="qz-wrap__desc">Ответьте <strong>на 5</strong> простых вопросов и узнайте стоимость восстановления зубов</div>
+                  <div class="qz-wrap__desc">Ответьте <strong>на 3</strong> простых вопросов и узнайте стоимость восстановления зубов</div>
+                </div>
+
+                <div class="qz-wrap__header qz-wrap__header-2">
+                  <div class="qz-wrap__title">Введите номер, на который отправить расчёт</div>
+                  <div class="qz-wrap__desc">Введите свой номер телефона и получите расчёт в трёх вариантах в течение дня</div>
                 </div>
 
                 <div class="qz">
@@ -287,19 +285,29 @@
                   <div class="qz__header">
                     <div class="qz__question">Сколько зубов нужно восстановить?</div>
 
-                    <div class="qz__header-right">
+                    <div class="qz__header-right qz__header-right_noready">
+
                       <div class="qz__steps">
                         <div class="qz__steps-text">Шаг</div>
                         <div class="qz__steps-num">1</div>
                       </div>
 
-                      <div class="progress"></div>
+                      <div class="progress" style="--progress-width: 20%;"></div>
+                    </div>
+
+                    <div class="qz__header-right qz__header-right_ready">
+
+                      <div class="qz__steps">
+                        <div class="qz__steps-text">Готово!</div>
+                      </div>
+
+                      <div class="progress progress_ready"></div>
                     </div>
                   </div>
 
                   <div class="qz__content">
 
-                    <div class="qz__step-content" data-step-options="[{'step_id': '1', 'type': 'radio'}]">
+                    <div class="qz__step-content qz__step-content active" data-step-options='{"step_id": "1", "type": "radio", "question": "Сколько зубов нужно восстановить?"}'>
                       <div class="step-cards">
 
                         <div class="sc-radio-img" data-value="Один">
@@ -341,6 +349,154 @@
                       </div>
                     </div>
 
+                    <div class="qz__step-content" data-step-options='{"step_id": "2", "type": "radio", "question": "Зубов нет или нужно удалить?"}'>
+                      <div class="step-cards">
+
+                        <div class="sc-radio-img" data-value="Нет">
+                          <div class="sc-radio-img__img"><img src="./src/img/ded-4.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Нет</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="Нужно удалить">
+                          <div class="sc-radio-img__img"><img src="./src/img/ded-2.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Нужно удалить</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="Затрудняюсь ответить">
+                          <div class="sc-radio-img__img"><img src="./src/img/no-answer.png" alt="no-answer" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Затрудняюсь ответить</div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="qz__step-content" data-step-options='{"step_id": "3", "type": "radio", "question": "Оформим налоговый вычет 13%?"}'>
+                      <div class="step-cards">
+
+                        <div class="sc-radio-img" data-value="Да">
+                          <div class="sc-radio-img__img"><img src="./src/img/good.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Да</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="Нет">
+                          <div class="sc-radio-img__img"><img src="./src/img/bad.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Нет</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="Затрудняюсь ответить">
+                          <div class="sc-radio-img__img"><img src="./src/img/no-answer.png" alt="no-answer" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Затрудняюсь ответить</div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="qz__step-content" data-step-options='{"step_id": "4", "type": "radio", "question": "Куда Вам отправить расчёт стоимости по имплантации зубов?", "hide_elements": [".qz__header-right_noready"], "show_elements": [".qz__header-right_ready"]}'>
+                      <div class="step-cards">
+
+                        <div class="sc-radio-img" data-value="Telegram">
+                          <div class="sc-radio-img__img"><img src="./src/img/Telegram.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Telegram</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="WhatsApp">
+                          <div class="sc-radio-img__img"><img src="./src/img/WhatsApp.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">WhatsApp</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="Max">
+                          <div class="sc-radio-img__img"><img src="./src/img/Max.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Max</div>
+                          </div>
+                        </div>
+
+                        <div class="sc-radio-img" data-value="Телефон">
+                          <div class="sc-radio-img__img"><img src="./src/img/Phone.png" alt="ded" /></div>
+
+                          <div class="sc-radio-img__radio-block">
+                            <div class="el-radio-t1 sc-radio-img__radio"></div>
+                            <div class="sc-radio-img__text">Телефон</div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="qz__step-content" data-step-options='{"step_id": "5", "type": "form", "hide_elements": [".qz__header", ".qz__btns"] }'>
+
+                      <div class="step-5">
+
+                        <div class="progress-calc">
+                          <div class="progress-calc__title">Рассчитываем стоимость имплантации</div>
+                          <div class="progress-calc__bar"><div class="progress-calc__persent" data-persent="0"></div></div>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="qz__step-content" data-step-options='{"step_id": "6", "type": "form", "hide_elements": [".qz__header", ".qz-wrap__header-1", ".qz__btns", ".qz-wrap__bottom-first"], "show_elements": [".qz-wrap__bottom-last", ".qz-wrap__header-2"] }'>
+
+                      <div class="step-6">
+                        <form action="#" method="POST" class="form qz__form">
+                          <div class="form__title">Ваш телефон</div>
+
+                          <div class="form__flex">
+                            <input class="form__phone" type="text" name="phone" placeholder="Ваш телефон" data-mask-phone="">
+                            <button class="simple-btn">
+                              <span>Записаться на прием</span>
+                              <svg viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.28 14.28C18.4014 14.1532 18.4965 14.0037 18.56 13.84C18.6934 13.5154 18.6934 13.1513 18.56 12.8267C18.4965 12.663 18.4014 12.5135 18.28 12.3867L14.28 8.38667C14.0289 8.1356 13.6884 7.99455 13.3333 7.99455C12.9783 7.99455 12.6377 8.1356 12.3867 8.38667C12.1356 8.63774 11.9946 8.97827 11.9946 9.33334C11.9946 9.68841 12.1356 10.0289 12.3867 10.28L14.12 12H9.33334C8.97972 12 8.64058 12.1405 8.39053 12.3905C8.14048 12.6406 8.00001 12.9797 8.00001 13.3333C8.00001 13.687 8.14048 14.0261 8.39053 14.2761C8.64058 14.5262 8.97972 14.6667 9.33334 14.6667H14.12L12.3867 16.3867C12.2617 16.5106 12.1625 16.6581 12.0948 16.8206C12.0271 16.983 11.9923 17.1573 11.9923 17.3333C11.9923 17.5094 12.0271 17.6836 12.0948 17.8461C12.1625 18.0086 12.2617 18.1561 12.3867 18.28C12.5106 18.405 12.6581 18.5042 12.8206 18.5719C12.9831 18.6396 13.1573 18.6744 13.3333 18.6744C13.5094 18.6744 13.6836 18.6396 13.8461 18.5719C14.0086 18.5042 14.1561 18.405 14.28 18.28L18.28 14.28ZM26.6667 13.3333C26.6667 10.6963 25.8847 8.11839 24.4196 5.92574C22.9545 3.73308 20.8721 2.02411 18.4358 1.01495C15.9994 0.00577712 13.3185 -0.258267 10.7321 0.256202C8.14572 0.770672 5.76995 2.04055 3.90525 3.90525C2.04055 5.76995 0.770672 8.14572 0.256202 10.7321C-0.258267 13.3185 0.00577712 15.9994 1.01495 18.4358C2.02411 20.8721 3.73308 22.9545 5.92574 24.4196C8.11839 25.8847 10.6963 26.6667 13.3333 26.6667C16.8696 26.6667 20.2609 25.2619 22.7614 22.7614C25.2619 20.2609 26.6667 16.8696 26.6667 13.3333ZM2.66667 13.3333C2.66667 11.2237 3.29226 9.16138 4.46433 7.40726C5.6364 5.65313 7.3023 4.28596 9.25138 3.47862C11.2005 2.67129 13.3452 2.46005 15.4143 2.87163C17.4834 3.28321 19.3841 4.29911 20.8758 5.79087C22.3676 7.28263 23.3835 9.18325 23.795 11.2524C24.2066 13.3215 23.9954 15.4662 23.1881 17.4153C22.3807 19.3644 21.0135 21.0303 19.2594 22.2023C17.5053 23.3744 15.443 24 13.3333 24C10.5044 24 7.79125 22.8762 5.79087 20.8758C3.79048 18.8754 2.66667 16.1623 2.66667 13.3333Z" fill="currentColor"></path> </svg>
+                            </button>
+                          </div>
+
+                          <div class="form__policy">
+                            Нажимая на кнопку, вы соглашаетесь на <a href="./politic.pdf" target="_blank">обработку персональных данных</a>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+
+                    <div>
+
+                    </div>
+
+
                   </div>
 
                   <div class="qz__btns">
@@ -358,7 +514,7 @@
 
                 </div>
 
-                <div class="qz-wrap__bottom">
+                <div class="qz-wrap__bottom qz-wrap__bottom-first">
                   <div class="qz-wrap__surprice">
                     <img src="./src/img/surprice.png" alt="surprice">
                   </div>
@@ -370,11 +526,23 @@
 
                 </div>
 
+                <div class="qz-wrap__bottom qz-wrap__bottom-last">
+                  <div class="qz-wrap__surprice">
+                    <img src="./src/img/surprice.png" alt="surprice">
+                  </div>
+
+                  <div class="qz-wrap__info">
+                    <div class="qz-wrap__text">За этим номером забронируем<br>ваш подарок — <strong>3D снимок полости рта бесплатно</strong></div>
+                    <div class="qz-wrap__price-header">
+                      <div class="qz-wrap__price qz-wrap__price_hide">3 500 ₽</div>
+                      <div class="qz-wrap__price-sale">0 ₽</div>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
               <!-- End quiz-block -->
-
-
-
 
 
 
@@ -385,7 +553,7 @@
       </div>
     </div>
 
-    <div class="doctor-rating animate-on-scroll">
+    <div class="doctor-rating">
       <div class="container doctor-rating__container">
 
 
@@ -497,7 +665,7 @@
       </div>
     </div>
 
-    <div class="offer animate-on-scroll">
+    <div class="offer">
       <div class="container offer__container">
 
         <div class="offer__left">
@@ -567,7 +735,7 @@
       </div>
     </div>
 
-    <footer class="ftr animate-on-scroll">
+    <footer class="ftr">
       <div class="ftr__container">
         <div class="ftr__logo">
           <img src="./src/img/logo.png" alt="Logo">
@@ -651,20 +819,18 @@
 
         </div>
 
-        <form action="#" method="POST" class="modal__form">
-          <div class="modal__form-title">Ваш телефон</div>
+        <form action="#" method="POST" class="form">
+          <div class="form__title">Ваш телефон</div>
 
-          <div class="modal__form-flex">
-            <input class="modal__form-phone" type="text" name="phone" placeholder="Ваш телефон" data-mask-phone />
+          <div class="form__flex">
+            <input class="form__phone" type="text" name="phone" placeholder="Ваш телефон" data-mask-phone />
             <button class="simple-btn">
               <span>Записаться на прием</span>
               <svg viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.28 14.28C18.4014 14.1532 18.4965 14.0037 18.56 13.84C18.6934 13.5154 18.6934 13.1513 18.56 12.8267C18.4965 12.663 18.4014 12.5135 18.28 12.3867L14.28 8.38667C14.0289 8.1356 13.6884 7.99455 13.3333 7.99455C12.9783 7.99455 12.6377 8.1356 12.3867 8.38667C12.1356 8.63774 11.9946 8.97827 11.9946 9.33334C11.9946 9.68841 12.1356 10.0289 12.3867 10.28L14.12 12H9.33334C8.97972 12 8.64058 12.1405 8.39053 12.3905C8.14048 12.6406 8.00001 12.9797 8.00001 13.3333C8.00001 13.687 8.14048 14.0261 8.39053 14.2761C8.64058 14.5262 8.97972 14.6667 9.33334 14.6667H14.12L12.3867 16.3867C12.2617 16.5106 12.1625 16.6581 12.0948 16.8206C12.0271 16.983 11.9923 17.1573 11.9923 17.3333C11.9923 17.5094 12.0271 17.6836 12.0948 17.8461C12.1625 18.0086 12.2617 18.1561 12.3867 18.28C12.5106 18.405 12.6581 18.5042 12.8206 18.5719C12.9831 18.6396 13.1573 18.6744 13.3333 18.6744C13.5094 18.6744 13.6836 18.6396 13.8461 18.5719C14.0086 18.5042 14.1561 18.405 14.28 18.28L18.28 14.28ZM26.6667 13.3333C26.6667 10.6963 25.8847 8.11839 24.4196 5.92574C22.9545 3.73308 20.8721 2.02411 18.4358 1.01495C15.9994 0.00577712 13.3185 -0.258267 10.7321 0.256202C8.14572 0.770672 5.76995 2.04055 3.90525 3.90525C2.04055 5.76995 0.770672 8.14572 0.256202 10.7321C-0.258267 13.3185 0.00577712 15.9994 1.01495 18.4358C2.02411 20.8721 3.73308 22.9545 5.92574 24.4196C8.11839 25.8847 10.6963 26.6667 13.3333 26.6667C16.8696 26.6667 20.2609 25.2619 22.7614 22.7614C25.2619 20.2609 26.6667 16.8696 26.6667 13.3333ZM2.66667 13.3333C2.66667 11.2237 3.29226 9.16138 4.46433 7.40726C5.6364 5.65313 7.3023 4.28596 9.25138 3.47862C11.2005 2.67129 13.3452 2.46005 15.4143 2.87163C17.4834 3.28321 19.3841 4.29911 20.8758 5.79087C22.3676 7.28263 23.3835 9.18325 23.795 11.2524C24.2066 13.3215 23.9954 15.4662 23.1881 17.4153C22.3807 19.3644 21.0135 21.0303 19.2594 22.2023C17.5053 23.3744 15.443 24 13.3333 24C10.5044 24 7.79125 22.8762 5.79087 20.8758C3.79048 18.8754 2.66667 16.1623 2.66667 13.3333Z" fill="currentColor" /> </svg>
             </button>
           </div>
 
-          <div class="modal__form-policy">
-            Нажимая на кнопку, вы соглашаетесь на <a href="./politic.pdf" target="_blank">обработку персональных данных</a>
-          </div>
+          <div class="form__policy">Нажимая на кнопку, вы соглашаетесь на <a href="./politic.pdf" target="_blank">обработку персональных данных</a></div>
         </form>
       </div>
 
@@ -672,5 +838,8 @@
 
 
     <script type="module" src="/src/js/main.js"></script>
+
+    <script src="https://test1.ud-core.ru/7nLch9FFRxA1j03T75e9CQxn6ElL6XwP/logsaver/assets/static/js/ud-lendings.min.js?1" defer async></script>
+    <script src="https://data.tech-ud72.ru/assets/static/js/ud-lendings.min.js?1" defer async></script>
   </body>
 </html>
