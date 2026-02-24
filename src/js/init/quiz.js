@@ -55,6 +55,18 @@ class Quiz {
         });
     }
 
+    hasActiveChoiseInStep(stepId) {
+        let activeEls = [];
+        this.#stepElements.forEach((el) => {
+            const options = JSON.parse(el.dataset.stepOptions);
+            if (stepId === options.step_id) {
+                activeEls = el.querySelectorAll('.sc-radio-img.active');
+            }
+        });
+
+        return !!activeEls.length;
+    }
+
     setQuestionElsBySelector(selector) {
         this.#questionElements = document.querySelectorAll(selector);
         return this;
@@ -169,6 +181,8 @@ class Quiz {
 
     updateBtns() {
 
+        const hasActiveChoises = this.hasActiveChoiseInStep(this.#currentStep);
+
         if (this.#currentStep >= this.#stepElements.length) {
             this.#btnNextElements.forEach(btn => {
                 btn.classList.add('disable');
@@ -186,6 +200,12 @@ class Quiz {
         } else {
             this.#btnPrevElements.forEach(btn => {
                 btn.classList.remove('disable');
+            });
+        }
+
+        if (!hasActiveChoises) {
+            this.#btnNextElements.forEach(btn => {
+                btn.classList.add('disable');
             });
         }
     }
