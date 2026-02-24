@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const stepElement = e.detail.step;
         const bar = stepElement.querySelector('.progress-calc__persent');
 
-        console.log(bar);
-
         let total = 0;
         function updateProgressBar() {
             const randomNumber = Math.floor(Math.random() * 10) + 1;
@@ -46,13 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
             bar.dataset.persent = total;
 
             if (total < 100) {
-                setTimeout(updateProgressBar, 500);
+                setTimeout(updateProgressBar, 100);
             } else {
                 document.querySelector('.progress-calc__title').innerText = 'Готово! Стоимость рассчитана!';
 
                 setTimeout(() => {
                     window.quiz.setStep(6);
-                }, 2000);
+                }, 1000);
             }
         }
 

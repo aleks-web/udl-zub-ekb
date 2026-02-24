@@ -16,6 +16,16 @@ body.menu-open {
     display: flex;
   }
 
+  &__mob-phone {
+    display: none;
+    margin-left: auto;
+
+    .info-item {
+      border-right: unset !important;
+      padding-right: 0 !important;
+    }
+  }
+
   &__grid {
     display: flex;
     width: 100%;
@@ -212,6 +222,10 @@ body.menu-open {
       display: block;
     }
 
+    &__mob-phone {
+      display: flex;
+    }
+
     &__item {
       &-logo-img {
         max-width: 200px;
@@ -239,8 +253,26 @@ body.menu-open {
   .header {
     &__item {
       &-logo-img {
-        max-width: 200px;
+        max-width: 140px;
       }
+    }
+
+    &__mob-phone {
+      .info-item {
+        gap: 5px;
+
+        &__desc {
+          font-size: 14px;
+        }
+
+        &__icon {
+          width: 14px;
+        }
+      }
+    }
+
+    &__burger-btn {
+      display: none;
     }
   }
 
@@ -255,11 +287,41 @@ body.menu-open {
   }
 }
 
+@media(max-width: 380px) {
+  .header {
+    &__mob-phone {
+      .info-item {
+
+
+        &__desc {
+          font-size: 12px;
+          margin-top: 6px;
+        }
+
+        &__icon {
+          width: 12px;
+        }
+      }
+    }
+  }
+}
+
 @media(max-width: 330px) {
   .header {
     &__item {
       &-logo-img {
         max-width: 140px;
+      }
+    }
+
+    &__mob-phone {
+      .info-item {
+        &__desc {
+          display: none;
+        }
+        &__icon {
+          width: 20px;
+        }
       }
     }
 

@@ -48,6 +48,10 @@
 
   &__doctor-card {
 
+    .doctor-card__img {
+      aspect-ratio: 1 / 1.4;
+    }
+
     .doctor-card__bottom-title {
       @media (max-width: 1600px) {
         font-size: 19px;
