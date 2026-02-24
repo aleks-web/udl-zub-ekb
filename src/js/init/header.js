@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobMenu = document.querySelector('.mobile-header');
 
     function toggleMenu() {
-        if(btn.classList.contains(activeBtnClass)) {
-            btn.classList.remove(activeBtnClass);
+        if(btn?.classList?.contains(activeBtnClass)) {
+            btn?.classList?.remove(activeBtnClass);
             mobMenu.classList.remove(activeMenuClass);
             document.body.classList.remove('menu-open');
         } else {
-            btn.classList.add(activeBtnClass);
+            btn?.classList?.add(activeBtnClass);
             mobMenu.classList.add(activeMenuClass);
             document.body.classList.add('menu-open');
         }
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', (e) => {
 
-        if (window.innerWidth > 1200 && btn.classList.contains(activeBtnClass)) {
+        if (window.innerWidth > 1200 && btn?.classList?.contains(activeBtnClass)) {
             toggleMenu();
         }
 

@@ -277,6 +277,9 @@ body.menu-open {
 
 @media(max-width: 1024px) {
   .header {
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+
     &__item-work-time {
       .info-item:nth-child(1) {
         display: none;
