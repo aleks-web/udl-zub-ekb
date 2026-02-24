@@ -1,27 +1,45 @@
 document.addEventListener('DOMContentLoaded', () => {
-    function fadeIn(el, opac = 1, display) {
-        let opacity = 0;
-        el.style.display = display || 'flex';
-        el.style.zIndex = '100';
-        let intervalID = setInterval(function() {
-            if (opacity < opac) {
-                opacity = opacity + 0.1
-                el.style.opacity = opacity;
-            } else {
-                clearInterval(intervalID);
+
+    function fadeIn(element, duration, targetOpacity, display = 'block') {
+        element.style.opacity = 0;
+        element.style.display = display || 'block';
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+
+            const progress = Math.min(elapsed / duration, 1);
+            element.style.opacity = progress * targetOpacity;
+
+            if (progress < 1) {
+                requestAnimationFrame(animation);
             }
-        }, 30);
+        }
+
+        requestAnimationFrame(animation);
     }
 
-    function fadeOut(el) {
-        el.style.opacity = 1;
-        (function fade() {
-            if ((el.style.opacity -= .1) < 0) {
-                el.style.display = "none";
+    function fadeOut(element, duration) {
+        element.style.opacity = element.style.opacity ? element.style.opacity : 1;
+        let opacityStart = Number(element.style.opacity);
+        let startTime = null;
+
+        function animation(currentTime) {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+
+            const progress = Math.min(elapsed / duration, opacityStart);
+            element.style.opacity = opacityStart - progress;
+
+            if (progress < opacityStart) {
+                requestAnimationFrame(animation);
             } else {
-                requestAnimationFrame(fade);
+                element.style.display = 'none';
             }
-        })();
+        }
+
+        requestAnimationFrame(animation);
     }
 
 
@@ -34,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalName = el.getAttribute('id');
 
             if (modalName === name) {
-                fadeIn(el, 1, 'flex');
-                fadeIn(modalBg, 0.5);
+                fadeIn(el, 400, 1, 'flex');
+                fadeIn(modalBg, 200, 0.5);
                 document.body.classList.add('modal-open');
                 el.classList.add('open');
             }
@@ -44,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeModal = () => {
         modals.forEach(el => {
-            fadeOut(el);
-            fadeOut(modalBg);
+            fadeOut(el, 300);
+            fadeOut(modalBg, 300);
             el.classList.remove('open');
             document.dispatchEvent(new CustomEvent('closeModal', { detail: { modal: el } }));
         });
