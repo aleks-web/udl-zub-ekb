@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function openOrderModal() {
-        if(!document.querySelector('.modal.open') && !localStorage.getItem('modal-order-close') && document.getElementById('lb_widget-wrapper').style.display === 'none') {
+        if(!document.querySelector('.modal.open') && !localStorage.getItem('modal-order-close') && (!document.getElementById('lb_widget-wrapper') || document.getElementById('lb_widget-wrapper').style.display === 'none')) {
             openModal('modal-order');
             clearInterval(openOrderModal);
         } else {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    setTimeout(openOrderModal, 20000);
+    setTimeout(openOrderModal, 10000);
 
     document.addEventListener('closeModal', (e) => {
        let modalName = e.detail.modal.getAttribute('id');
@@ -120,5 +120,24 @@ document.addEventListener('DOMContentLoaded', () => {
            localStorage.setItem('modal-order-close', "1");
        }
     });
+
+
+    const target = document.querySelector(".offer");
+    const options = {
+        root: null,
+        threshold: 0.8,
+        scrollMargin: "10px"
+    };
+    const observer = new IntersectionObserver((entries, opts) => {
+            for (const entry of entries) {
+                if (entry.intersectionRatio > 0) {
+                    openOrderModal();
+
+                    observer.unobserve(entry.target)
+                }
+            }
+        }, options);
+
+    observer.observe(target);
 
 });
