@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    setTimeout(openOrderModal, 3000);
+    setTimeout(openOrderModal, 20000);
 
     document.addEventListener('closeModal', (e) => {
        let modalName = e.detail.modal.getAttribute('id');
