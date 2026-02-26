@@ -7,7 +7,7 @@ function startLenta() {
         medalsContainer.style.pointerEvents = "none";
 
         clearLenta();
-        medals.forEach(medal => {
+        document.querySelectorAll('.medal-item').forEach(medal => {
             const clone = medal.cloneNode(true);
             clone.classList.add('cloned');
             medalsContainer.appendChild(clone);
