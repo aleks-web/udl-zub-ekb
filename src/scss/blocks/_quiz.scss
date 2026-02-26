@@ -729,6 +729,8 @@
     &_back {
       background-color: white;
       border: 2px solid var(--text-color);
+      box-shadow: unset !important;
+
 
       &:hover {
         background-color: #5CC2FF;

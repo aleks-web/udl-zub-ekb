@@ -7,6 +7,7 @@ import './../font/stylesheet.css';
 import './../js/init/header.js';
 import './../js/init/masks.js';
 import './../js/init/modals.js';
+import './../js/init/medals-line.js';
 import './../js/init/quiz.js';
 
 document.addEventListener('DOMContentLoaded', () => {
