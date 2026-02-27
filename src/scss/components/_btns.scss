@@ -101,7 +101,6 @@
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: white;
     stroke-width: 2;
     transform: translateX(5px);
     transition: all 0.5s ease;
@@ -109,6 +108,8 @@
     height: 30px;
     opacity: 0;
     margin-left: auto;
+    stroke: unset;
+    color: var(--text-color);
   }
 
   &:hover > span {
