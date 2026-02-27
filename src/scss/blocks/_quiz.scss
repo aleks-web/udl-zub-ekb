@@ -731,6 +731,11 @@
       border: 2px solid var(--text-color);
       box-shadow: unset !important;
 
+      &.disable {
+        opacity: 0;
+        visibility: hidden;
+      }
+
 
       &:hover {
         background-color: #5CC2FF;
@@ -746,6 +751,7 @@
 
     &_next {
       border-color: #5CC2FF;
+      display: none;
 
       &:hover {
         background-color: #78CDFF;
